@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        @media screen and (max-width:900px) {
+            body{
+                background-color: red;
+            }
+            .first{
+                font-size: 20px;
+                padding:0px;
+            }
+            
+        }
+
+        body {
+
+            background-color: default;
+        }
+
+        .first {
+            background-color: rgb(202, 175, 245);
+            color: black;
+            /* animation-name: text;
+            animation-duration: 4s; */
+
+        }
+
+        @keyframes text {
+            33% {
+                color: red;
+            }
+
+            66% {
+                color: green;
+            }
+
+            99% {
+                color: black;
+            }
+
+        }
+
+        h1 {
+            align-items: center;
+            text-align: center;
+            font-weight: 25px;
+            font-size: 35px;
+            color: black;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        h4 {
+            font-size: 18px;
+            padding-left: 5px;
+            color: maroon;
+        }
+
+        /* #box1 p {
+            margin: 5px;
+            padding: 5px;
+            font-family: 'Roboto Slab', sans-serif;
+            font-weight: 900;
+        } */
+        p{
+            font-style:normal;
+            font-size: 17px;
+               align-items: center;
+               text-align:justify;
+            color: black;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #box1 {
+
+            box-shadow: 5px 0px 052px grey;
+            width: 90vh;
+            background-color: ghostwhite;
+            font-family: 'Roboto Slab', sans-serif;
+            color: black;
+            margin: auto;
+            position: sticky;
+            top: 0px;
+
+        }
+
+        .userinput {
+            padding: 34px;
+            display: flex;
+        }
+
+        .input h3 {
+            color: darkblue;
+        }
+
+        .grades h3 {
+            color: darkblue;
+        }
+
+        .input {
+            margin-right: 15px;
+        }
+
+        .crd {
+            margin-bottom: 2px;
+        }
+
+        .grd {
+            margin-bottom: 2px;
+        }
+
+        input:focus {
+
+            border: 2px solid black;
+            outline: none;
+        }
+
+        #resetbtn {
+            background-color: red;
+            color: white;
+            font-size: 17px;
+            border: 5px solid red;
+
+
+        }
+
+        /*  #clbtn{
+        border:5px solid midnightblue;
+        background-color:midnightblue;
+       color:white;
+        font-size:17px;
+      } */
+        button {
+            border: 5px solid midnightblue;
+            background-color: midnightblue;
+            color: white;
+            font-size: 17px;
+        }
+
+        .output {
+            padding-left: 25px;
+            background-color: rgb(235, 235, 245);
+            height: 300px;
+        }
+
+        .output h3 {
+            color: black;
+        }
+
+        table {
+            margin-left: 15px;
+            border-collapse: collapse;
+        }
+
+        table tr th {
+            color: purple;
+            border: 1px solid black;
+            /* background-color:	lightcyan; */
+            width: 100px;
+
+        }
+
+        table tr {
+            padding-left: 6px;
+            margin: 5px;
+        }
+
+        table tr td {
+            border: 1px solid black;
+            align-items: center;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto+Slab&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+<body>
+    <div class='box' id="box1">
+       
+        <h1 class="first">STUDENTS GRADE CALCULATOR</h1>
+        <table>
+            <tr>
+                <th>Grades</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>O/S</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>5</td>
+            </tr>
+        </table>
+     <h4>NOTE</h4>
+        <p>According to given above table choose the points according to your result grades and calculate in
+        below points column.</p>
+      <h4>FOR EXAMPLE  :</h4> <p>If u got "A" Grade then enter 9 point in the columns </p>
+        <form>
+            <div class="userinput" id="usr">
+                <div class="input" id="txt">
+                    <h3>Enter the Credits</h3>
+                    <input type='number' name='credit1' id="cr1" class='crd' maxvalue="1"><br>
+                    <input type='number' name='credit2' id="cr2" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit3' id="cr3" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit4' id="cr4" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit5' id="cr5" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit6' id="cr6" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit7' id="cr7" class='crd' maxlength="1"><br>
+                    <input type='number' name='credit8' id="cr8" class='crd' maxlength="1"><br>
+
+                </div>
+                <div class="grades" id="grade">
+                    <h3>Enter the points </h3>
+                    <input type='number' id="grade1" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade2" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade3" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade4" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade5" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade6" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade7" class="grd" maxlength="1"><br>
+                    <input type='number' id="grade8" class="grd" maxlength="1"><br>
+
+
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="reset" value="Reset" class="btns" id="resetbtn">
+                <button id="btn" type="button" onclick="show_result()">calcuate</button>
+                <!--/ <input type="submit" value="Calculate" class="btns" id="clbtn">*/-->
+                <div class="output" id="otp">
+                    <h1 id="result">RESULT!<h2>
+                            <h3> Grade: <span class="gra" ></span></h3>
+                            <h3>Percentage: <span class="per" ></span></h3>
+
+                            <h3> Total Credits: <span class="tot"> </span> </h3>
+                            <h3>Total Grade Points: <span class="tgp" ></span></h3>
+                            <h3>Final Result: <span id="finalr" class="fs" ></span></h3>
+
+                </div>
+
+        </form>
+
+    </div>
+    </div>
+    <script>
+        function show_result() {
+            document.getElementById("otp").style.background= '	lavender';
+            let cr1 = document.querySelector("#cr1").value;
+            let cr2 = document.querySelector("#cr2").value;
+            let cr3 = document.querySelector("#cr3").value;
+            let cr4 = document.querySelector("#cr4").value;
+            let cr5 = document.querySelector("#cr5").value;
+            let cr6 = document.querySelector("#cr6").value;
+            let cr7 = document.querySelector("#cr7").value;
+            let cr8 = document.querySelector("#cr8").value;
+
+            let tot = parseFloat(cr1) + parseFloat(cr2) + parseFloat(cr3) + parseFloat(cr4) + parseFloat(cr5) +
+                parseFloat(cr6) + parseFloat(cr7) + parseFloat(cr8);
+
+
+            let grade1 = document.querySelector("#grade1").value;
+            let grade2 = document.querySelector("#grade2").value;
+            let grade3 = document.querySelector("#grade3").value;
+            let grade4 = document.querySelector("#grade4").value;
+            let grade5 = document.querySelector("#grade5").value;
+            let grade6 = document.querySelector("#grade6").value;
+            let grade7 = document.querySelector("#grade7").value;
+            let grade8 = document.querySelector("#grade8").value;
+
+            let tgp = parseFloat(grade1 * cr1) + parseFloat(grade2 * cr2) + parseFloat(grade3 * cr3) + parseFloat(grade4 * cr4)
+                + parseFloat(grade5 * cr5) + parseFloat(grade6 * cr6) + parseFloat(grade7 * cr7) + parseFloat(grade8 * cr8);
+
+            let per = tgp / tot;
+
+            if (per >= 8.5 && per <= 10.0) {
+                document.querySelector(".gra").innerHTML = "O";
+            }
+            else if (per > 10.0) {
+                document.querySelector(".gra".innerHTML = "Enter correct values")
+            }
+            else if (per >= 7.0) {
+                document.querySelector(".gra").innerHTML = "A";
+            }
+            else if (per >= 6.0) {
+                document.querySelector(".gra").innerHTML = "B";
+            }
+            else if (per >= 5.5) {
+                document.querySelector(".gra").innerHTML = "C";
+            }
+            else if (per >= 5.0) {
+                document.querySelector(".gra").innerHTML = "D";
+            }
+            else if (per >= 4.0) {
+                document.querySelector(".gra").innerHTML = "E";
+            }
+            else if (per < 4.0) {
+                document.querySelector(".gra").innerHTML = "F*";
+            }
+
+            else {
+                document.querySelector(".gra").innerHTML = "AB";
+            }
+
+            document.querySelector(".per").innerHTML = per;
+            document.querySelector(".tot").innerHTML = tot;
+            document.querySelector(".tgp").innerHTML = tgp;
+            if (per > 4.0) {
+                document.querySelector(".fs").innerHTML = "YOU ARE PASS";
+            }
+            else {
+                document.querySelector(".fs").innerHTML = "YOU ARE FAIL";
+            }
+            if (per > 4.0) {
+                document.getElementById("finalr").style.color = 'Green';
+            }
+            else {
+                document.getElementById("finalr").style.color = "red";
+            }
+            if (per > 4.0) {
+                document.getElementById("result").style.color = 'Green';
+
+            }
+            else {
+                document.getElementById("result").style.color = "red";
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
